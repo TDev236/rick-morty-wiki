@@ -22,15 +22,15 @@ const Cards = ({ results }) => {
           {(() => {
             if (status === "Dead") {
               return(
-                <div className={`${styles.badge} position-absolute badge bg-danger`}>{status}</div>
+                <div className={`${styles.badge} position-absolute badge bg-danger`}>Muerto</div>
               )
             } else if(status === "Alive") {
               return(
-                <div className={`${styles.badge} position-absolute badge bg-success`}>{status}</div>
+                <div className={`${styles.badge} position-absolute badge bg-success`}>Vivo</div>
               )
             } else{
               return(
-                <div className={`${styles.badge} position-absolute badge bg-secondary`}>{status}</div>
+                <div className={`${styles.badge} position-absolute badge bg-secondary`}>Desconocido</div>
               )
             }
           })()}
