@@ -10,7 +10,7 @@ const Gender = ({setGender, setPageNumber}) => {
               Genero
             </button>
           </h2>
-          <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div id="collapseOne" className="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             <div className="accordion-body d-flex flex-wrap gap-3">
                 {
                     genders.map((items, index) => (

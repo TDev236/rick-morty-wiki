@@ -7,7 +7,19 @@ const Filters = ({setStatus, setPageNumber, setGender, setSpecies}) => {
   return (
     <div className="col-3">
       <div className="text-center fs-4 mb-2 fw-bold">Filtro</div>
-      <div className="text-center text-primary text-decoration-underline mb-4" style={{cursor: "pointer"}}>Limpiar Filtro</div>
+      <div 
+        onClick={() =>{
+          setStatus("");
+          setPageNumber("");
+          setGender("");
+          setSpecies("");
+          window.location.reload(false);
+        }}
+        className="text-center text-primary text-decoration-underline mb-4" 
+        style={{cursor: "pointer"}}
+      >
+        Limpiar Filtro
+      </div>
       
       <div className="accordion" id="accordionExample">
         <Status setPageNumber={setPageNumber} setStatus={setStatus}/>

@@ -23,7 +23,7 @@ const Status = ({setStatus, setPageNumber}) => {
           </h2>
           <div 
             id="collapseThree" 
-            className="accordion-collapse collapse" 
+            className="accordion-collapse collapse show" 
             aria-labelledby="headingThree" 
             data-bs-parent="#accordionExample"
           >

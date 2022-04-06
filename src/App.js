@@ -5,8 +5,30 @@ import Cards from './components/Cards/Cards';
 import Filters from './components/Filters/Filters';
 import Pagination from './components/Pagination/Pagination';
 import Search from './components/Search/Search';
+import Navbar from './components/Navbar/Navbar';
 
-function App() {
+
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Episodes from './Pages/Episodes';
+import Location from './Pages/Location';
+
+function App(){
+  return(
+    <Router>
+      <div className="App">
+        <Navbar/>
+      </div>
+
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/episodes" element={<Episodes/>}/>
+        <Route path="/location" element={<Location/>}/>
+      </Routes>
+    </Router>
+  )
+}
+
+const Home = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState("");
@@ -24,10 +46,7 @@ function App() {
   },[api]);
   return (
     <>
-      <div>
-        <h1 className='text-center my-4'>
-          Rick & Morty - <span className='text-primary'>Wiki</span> 
-        </h1>
+      <div className='App'>
         <Search setPageNumber={setPageNumber} setSearch={setSearch}/>
         <div className="container">
           <div className="row">
@@ -37,7 +56,6 @@ function App() {
                 setGender={setGender}
                 setSpecies={setSpecies}  
               />
-                
             <div className="col-8">
               <div className="row">
                 <Cards results={results}/>
