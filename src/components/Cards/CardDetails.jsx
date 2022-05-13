@@ -11,7 +11,6 @@ const CardDetails = () => {
         (async () => {
             const data = await fetch(api).then(res => res.json());
             updatedFetchedData(data);
-            console.log(fetchedData)
         })()
     }, [api])
   return (
